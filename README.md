@@ -1,4 +1,4 @@
 hc-errorbars
 ============
 
-Errorbar patch for highcharts.  Working on 2.2.5.
+Errorbar patch for highcharts.  Working on HC 2.2.5.
