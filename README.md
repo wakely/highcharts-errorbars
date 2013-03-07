@@ -1,4 +1,4 @@
 hc-errorbars
 ============
 
-Errorbars for highcharts
+Errorbar patch for highcharts.

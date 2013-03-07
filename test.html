@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Highcharts Errorbar test</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+    <script type="text/javascript" src="highcharts_errorbars_spw.js"></script>
+</head>
+<body>
+
+<div id="hc_div" style="width: 800px; height: 420px; margin: 0; position:absolute; left:20px; top:20px;"></div>
+
+<script type="text/javascript">
+    $(function () {
+        $(document).ready(function () {
+            var options = {
+                chart:{
+                    renderTo:'hc_div',
+                    type:'ErrorBar',
+                    width:800,
+                    height:420,
+                    plotBorderWidth:2
+                },
+                title:{
+                    text:'Energy Spectrum'
+                },
+                legend:{
+                    align:'right',
+                    layout:'vertical',
+                    verticalAlign:'top',
+                    x:0,
+                    y:60
+                },
+                xAxis:{
+                    title:{text:"Energy"}
+                },
+                yAxis:{
+                    title:{text:"Flux"},
+                    endOnTick:true
+                    //type: 'logarithmic'
+                },
+                series:[
+                    {
+                        type:'ErrorBar',
+                        //allowPointSelect: false,
+                        name:'Detector A',
+                        data:[
+                            {   x:0, //default member
+                                y:1, //default member
+                                dyHi:0.2, //custom error bar
+                                dyLo:0.6  //custom error bar
+
+                            },
+                            {   x:2, //default member
+                                y:2, //default member
+                                dyHi:0.2, //custom error bar
+                                dyLo:0.2  //custom error bar
+                            },
+                            {   x:3, //default member
+                                y:3, //default member
+                                dyHi:0.32, //custom error bar
+                                dyLo:0.42  //custom error bar
+                            }
+
+                        ]
+                    },
+                    {
+                        type:'ErrorBar',
+                        //allowPointSelect: false,
+                        name:'Detector B',
+                        data:[
+                            {   x:0.5, //default member
+                                y:1, //default member
+                                dyHi:0.1, //custom error bar
+                                dyLo:0.2  //custom error bar
+                            },
+                            {   x:2.5, //default member
+                                y:2, //default member
+                                dyHi:0.1, //custom error bar
+                                dyLo:0.1  //custom error bar
+                            },
+                            {   x:3.5, //default member
+                                y:3, //default member
+                                dyHi:0.31, //custom error bar
+                                dyLo:0.51  //custom error bar
+                            }
+                        ]
+                    },
+                    {
+                        type:'ErrorBar',
+                        //allowPointSelect: false,
+                        name:'Detector C',
+                        data:[
+                            {   x:0.25, //default member
+                                y:1, //default member
+                                dyHi:0.5, //custom error bar
+                                dyLo:0.1  //custom error bar
+                            },
+                            {   x:2.25, //default member
+                                y:2, //default member
+                                dyHi:0.5, //custom error bar
+                                dyLo:0.1  //custom error bar
+                            },
+                            {   x:3.25, //default member
+                                y:3, //default member
+                                dyHi:0.2, //custom error bar
+                                dyLo:0.1  //custom error bar
+                            }
+                        ]
+                    }
+
+                ]
+            };
+
+            var chart = new Highcharts.Chart(options);
+        });
+    });
+
+</script>
+
+</body>
+</html>
